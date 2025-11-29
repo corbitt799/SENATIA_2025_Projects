@@ -1,0 +1,18 @@
+{
+    "name": "Blynk Alert",
+    "event": "blynk_alert",
+    "responseTopic": "{{PARTICLE_DEVICE_ID}}/hook-response/{{PARTICLE_EVENT_NAME}}",
+    "disabled": false,
+    "template": "webhook",
+    "url": "https://ny3.blynk.cloud/external/api/logEvent",
+    "requestType": "GET",
+    "noDefaults": true,
+    "rejectUnauthorized": true,
+    "unchunked": false,
+    "data_url_response_event": false,
+    "query": {
+        "token": "{{token}}",
+        "code": "tamper_event",
+        "description": "{{msg}}"
+    }
+}

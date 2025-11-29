@@ -9,9 +9,12 @@ https://www.blynk.io/
 
 ## Webhook Configurations
 
+Particle HTTP Get URL:
+'https://ny3.blynk.cloud/external/api/batch/update'
+
 To generate particle token for Blynk webhook:
 https://docs.particle.io/reference/cloud-apis/access-tokens/
 
 Blynk webhook URL:
-https://api.particle.io/v1/devices/00youridhere00/setRelay
+'https://api.particle.io/v1/devices/YOURIDHERE/setRelay'
 

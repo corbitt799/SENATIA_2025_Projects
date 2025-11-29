@@ -1,0 +1,23 @@
+{
+    "name": "Blynk HTTP Get",
+    "event": "blynk_https_get",
+    "responseTopic": "{{PARTICLE_DEVICE_ID}}/hook-response/{{PARTICLE_EVENT_NAME}}",
+    "disabled": false,
+    "template": "webhook",
+    "url": "https://ny3.blynk.cloud/external/api/batch/update",
+    "requestType": "GET",
+    "noDefaults": true,
+    "rejectUnauthorized": true,
+    "unchunked": false,
+    "data_url_response_event": false,
+    "query": {
+        "token": "{{token}}",
+        "V0": "{{v0}}",
+        "V1": "{{v1}}",
+        "V2": "{{v2}}",
+        "V3": "{{v3}}",
+        "V6": "{{v6}}",
+        "V4": "{{v4}}",
+        "V5": "{{v5}}"
+    }
+}

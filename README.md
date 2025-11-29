@@ -11,6 +11,8 @@ https://www.blynk.io/
 
 Particle HTTP Get URL:
 'https://ny3.blynk.cloud/external/api/batch/update'
+Particle Events URL:
+'https://ny3.blynk.cloud/external/api/logEvent'
 
 To generate particle token for Blynk webhook:
 https://docs.particle.io/reference/cloud-apis/access-tokens/

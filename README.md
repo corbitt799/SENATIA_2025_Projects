@@ -1,11 +1,13 @@
-# Boron Particle 404x Monitor Project SE NATIA 2025
+# Particle Boron 404x Remote Monitor Project SE NATIA 2025
 
+## Links:
 Particle IO:
 https://www.particle.io/
 
 Blynk IO:
 https://www.blynk.io/
 
+## Webhook Configurations
 
 To generate particle token for Blynk webhook:
 https://docs.particle.io/reference/cloud-apis/access-tokens/

@@ -20,3 +20,8 @@ https://docs.particle.io/reference/cloud-apis/access-tokens/
 Blynk webhook URL:
 'https://api.particle.io/v1/devices/YOURIDHERE/setRelay'
 
+Blynk JSON Content:
+arg={device_pinValue}
+
+Authorization   Bearer 712c91871cea1540cd0f1a81f80955aff4e7cb49
+Content-Type    application/x-www-form-urlencoded

@@ -1,22 +1,4 @@
-# ESP32 Camera 
 
-Arduino IDE Download:
-https://www.arduino.cc/en/software/
-
-
-ESP32 Board Manager Link:
-https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
-
-
-
-# Particle Boron 404x Remote Monitor 
-
-## Links:
-Particle IO:
-https://www.particle.io/
-
-Blynk IO:
-https://www.blynk.io/
 
 ## Webhook Configurations
 
@@ -79,7 +61,7 @@ Refer to Particle documentation for creating access tokens:
 [https://docs.particle.io/reference/cloud-apis/access-tokens/](https://docs.particle.io/reference/cloud-apis/access-tokens/)
 
 ### Example Blynk Webhook URL for Particle Device Control
-https://api.particle.io/v1/devices/YOURIDHERE/setRelay
+`https://api.particle.io/v1/devices/YOURIDHERE/setRelay`
 
 text
 Replace `YOURIDHERE` with your Particle device ID.

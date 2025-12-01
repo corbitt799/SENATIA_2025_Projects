@@ -38,7 +38,7 @@ Download the latest Arduino IDE from the official Arduino website:
 ### ESP32 Board Manager URL
 Add the following Board Manager URL in Arduino IDE for ESP32 board support:
 
-https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+`https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`
 
 
 

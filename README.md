@@ -36,3 +36,23 @@ arg={device_pinValue}
 
 Authorization   Bearer 712c91871cea1540cd0f1a81f80955aff4e7cb49
 Content-Type    application/x-www-form-urlencoded
+
+
+
+# ESP32 Camera and Particle Boron Remote Monitor Setup
+
+This repository contains setup details and useful links for working with the ESP32 Camera module using Arduino IDE and for remote monitoring with Particle Boron 404x using Blynk and webhooks.
+
+---
+
+## ESP32 Camera Setup with Arduino IDE
+
+### Arduino IDE Download
+Download the latest Arduino IDE from the official Arduino website:
+
+[https://www.arduino.cc/en/software/](https://www.arduino.cc/en/software/)
+
+### ESP32 Board Manager URL
+Add the following Board Manager URL in Arduino IDE for ESP32 board support:
+
+

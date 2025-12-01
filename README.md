@@ -1,5 +1,9 @@
 # ESP32 Camera 
 
+Arduino IDE Download:
+https://www.arduino.cc/en/software/
+
+
 ESP32 Board Manager Link:
 https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
 

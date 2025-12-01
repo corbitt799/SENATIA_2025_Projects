@@ -66,8 +66,8 @@ Refer to Particle documentation for creating access tokens:
 Replace `YOURIDHERE` with your Particle device ID.
 
 ### Webhook Content
-Authorization   Bearer YOURPARTICLETOKENHERE
-Content-Type    application/x-www-form-urlencoded
+- Authorization   Bearer YOURPARTICLETOKENHERE
+- Content-Type    application/x-www-form-urlencoded
 
 
 

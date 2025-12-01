@@ -47,7 +47,7 @@ Replace `YOURIDHERE` with your Particle device ID.
 - 1 arg={device_pinValue}
 
 ### HTTP Headers (optional)
-| Header                  | Value                              |
+|                         |                              |
 |-------------------------|------------------------------------|
 | Authorization           | Bearer YOURPARTICLETOKENHERE       |
 | Content-Type            | application/x-www-form-urlencoded  |

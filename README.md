@@ -43,12 +43,11 @@ Refer to Particle documentation for creating access tokens:
 
 Replace `YOURIDHERE` with your Particle device ID.
 
-### Webhook Content
-- JSON Content: arg={device_pinValue}
-- Authorization   Bearer YOURPARTICLETOKENHERE
-- Content-Type    application/x-www-form-urlencoded
+### Content Type / Custom JSON
+- 1 arg={device_pinValue}
 
-| Header                  | Value                              |
+### HTTP Headers (optional)
+
 |-------------------------|------------------------------------|
 | Authorization           | Bearer YOURPARTICLETOKENHERE       |
 | Content-Type            | application/x-www-form-urlencoded  |

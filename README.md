@@ -1,4 +1,11 @@
-# Particle Boron 404x Remote Monitor Project SE NATIA 2025
+# ESP32 Camera 
+
+ESP32 Board Manager Link:
+https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+
+
+
+# Particle Boron 404x Remote Monitor 
 
 ## Links:
 Particle IO:

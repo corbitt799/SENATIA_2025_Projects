@@ -40,7 +40,8 @@ Add the following Board Manager URL in Arduino IDE for ESP32 board support:
 
 `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`
 
-
+### ESP32-CAM_MJEPG2SD
+[https://github.com/s60sc/ESP32-CAM_MJPEG2SD] (https://github.com/s60sc/ESP32-CAM_MJPEG2SD)
 
 ---
 

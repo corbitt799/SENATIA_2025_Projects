@@ -70,6 +70,11 @@ Replace `YOURIDHERE` with your Particle device ID.
 - Authorization   Bearer YOURPARTICLETOKENHERE
 - Content-Type    application/x-www-form-urlencoded
 
+| Header                  | Value                              |
+|-------------------------|------------------------------------|
+| Authorization           | Bearer YOURPARTICLETOKENHERE       |
+| Content-Type            | application/x-www-form-urlencoded  |
+
 
 
 ---

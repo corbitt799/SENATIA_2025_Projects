@@ -63,19 +63,16 @@ Refer to Particle documentation for creating access tokens:
 ### Example Blynk Webhook URL for Particle Device Control
 `https://api.particle.io/v1/devices/YOURIDHERE/setRelay`
 
-text
 Replace `YOURIDHERE` with your Particle device ID.
 
----
+### Webhook Content
+Authorization   Bearer YOURPARTICLETOKENHERE
+Content-Type    application/x-www-form-urlencoded
 
-## Additional Resources
 
-- Detailed ESP32-CAM Arduino IDE setup guide:  
-  [How to add ESP32 CAM to Arduino IDE](https://www.pcb-hero.com/blogs/lisas-column/how-to-add-esp32-cam-to-arduino-ide)
-
-- Arduino core for ESP32 GitHub repository:  
-  [https://github.com/espressif/arduino-esp32](https://github.com/espressif/arduino-esp32)
 
 ---
+
+
 
 

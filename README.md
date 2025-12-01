@@ -39,9 +39,10 @@ Content-Type    application/x-www-form-urlencoded
 
 
 
+
 # ESP32 Camera and Particle Boron Remote Monitor Setup
 
-This repository contains setup details and useful links for working with the ESP32 Camera module using Arduino IDE and for remote monitoring with Particle Boron 404x using Blynk and webhooks.
+This repository contains setup details and useful links for 
 
 ---
 
@@ -54,5 +55,45 @@ Download the latest Arduino IDE from the official Arduino website:
 
 ### ESP32 Board Manager URL
 Add the following Board Manager URL in Arduino IDE for ESP32 board support:
+
+https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+
+
+
+---
+
+## Particle Boron 404x Remote Monitoring
+
+### Useful Links
+- Particle IO: [https://www.particle.io/](https://www.particle.io/)
+- Blynk IO: [https://www.blynk.io/](https://www.blynk.io/)
+
+### Webhook URLs for Particle to Blynk Integration
+- Particle HTTP Get URL for batch updates:  
+  `https://ny3.blynk.cloud/external/api/batch/update`
+- Particle Events URL:  
+  `https://ny3.blynk.cloud/external/api/logEvent`
+
+### Generating Particle Token for Blynk Webhooks
+Refer to Particle documentation for creating access tokens:  
+[https://docs.particle.io/reference/cloud-apis/access-tokens/](https://docs.particle.io/reference/cloud-apis/access-tokens/)
+
+### Example Blynk Webhook URL for Particle Device Control
+https://api.particle.io/v1/devices/YOURIDHERE/setRelay
+
+text
+Replace `YOURIDHERE` with your Particle device ID.
+
+---
+
+## Additional Resources
+
+- Detailed ESP32-CAM Arduino IDE setup guide:  
+  [How to add ESP32 CAM to Arduino IDE](https://www.pcb-hero.com/blogs/lisas-column/how-to-add-esp32-cam-to-arduino-ide)
+
+- Arduino core for ESP32 GitHub repository:  
+  [https://github.com/espressif/arduino-esp32](https://github.com/espressif/arduino-esp32)
+
+---
 
 

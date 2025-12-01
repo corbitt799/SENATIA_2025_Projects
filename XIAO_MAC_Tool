@@ -1,0 +1,113 @@
+#include <WiFi.h>
+
+// --- IDF4/IDF5 compatibility (Arduino-ESP32 v2/v3) ---
+#if __has_include(<esp_mac.h>)
+  #include <esp_mac.h>       // esp_read_mac, ESP_MAC_WIFI_STA
+#endif
+#if __has_include(<esp_system.h>)
+  #include <esp_system.h>    // older cores also expose esp_read_mac here
+#endif
+#if __has_include(<esp_efuse.h>)
+  #include <esp_efuse.h>     // esp_efuse_mac_get_default (if available)
+#endif
+
+// -------- Helpers --------
+String formatMac(const uint8_t mac[6], bool reverse=false) {
+  char buf[18];
+  const uint8_t* m = mac;
+  uint8_t tmp[6];
+  if (reverse) {
+    for (int i = 0; i < 6; ++i) tmp[i] = mac[5 - i];
+    m = tmp;
+  }
+  snprintf(buf, sizeof(buf), "%02X:%02X:%02X:%02X:%02X:%02X",
+           m[0], m[1], m[2], m[3], m[4], m[5]);
+  return String(buf);
+}
+
+bool isAllZero(const uint8_t mac[6]) {
+  for (int i = 0; i < 6; ++i) if (mac[i] != 0) return false;
+  return true;
+}
+
+// -------- Try reading the factory MAC directly from eFuses --------
+bool readFactoryStaMac(uint8_t out[6]) {
+  #if defined(ESP_MAC_WIFI_STA)
+    // Preferred: IDF4/5
+    esp_read_mac(out, ESP_MAC_WIFI_STA);
+    return !isAllZero(out);
+  #elif defined(ESP_EFUSE_MAC_SPI_WIFI_MAC_CUSTOM)
+    // Some cores: use the eFuse default getter if exposed
+    esp_efuse_mac_get_default(out);
+    return !isAllZero(out);
+  #else
+    // Fallback not available
+    memset(out, 0, 6);
+    return false;
+  #endif
+}
+
+// -------- Setup --------
+void setup() {
+  Serial.begin(115200);
+  delay(1500);  // Give USB-CDC on XIAO a moment to come up
+
+  Serial.println();
+  Serial.println("XIAO ESP32S3 MAC Address Inspector");
+  Serial.println("==================================");
+
+  // 1) Factory MAC straight from eFuses (no Wi-Fi needed)
+  uint8_t efuseSta[6] = {0};
+  bool efuseOK = readFactoryStaMac(efuseSta);
+
+  Serial.print("Factory(eFuse) STA MAC:         ");
+  Serial.println(formatMac(efuseSta, false));
+  Serial.print("Factory(eFuse) STA (reversed):  ");
+  Serial.println(formatMac(efuseSta, true));
+
+  if (!efuseOK) {
+    Serial.println("! Note: eFuse read returned zeros; will also try driver MAC.");
+  }
+
+  // 2) Bring up the STA interface minimally and read driver-reported MAC
+  WiFi.mode(WIFI_MODE_STA);   // power up Wi-Fi hardware (no network join)
+  WiFi.enableSTA(true);       // required on newer cores to actually init STA
+  delay(100);
+
+  uint8_t drvSta[6] = {0};
+  WiFi.macAddress(drvSta);    // byte array version is more reliable than String
+
+  Serial.print("Driver STA MAC:                ");
+  Serial.println(formatMac(drvSta, false));
+  Serial.print("Driver STA (reversed):         ");
+  Serial.println(formatMac(drvSta, true));
+
+  if (isAllZero(drvSta)) {
+    Serial.println("! Warning: Driver MAC is all zeros.");
+    Serial.println("  Tips for XIAO ESP32S3 if this persists:");
+    Serial.println("  - Update the Arduino-ESP32 core to the latest 3.x.");
+    Serial.println("  - Fully power-cycle the board (unplug USB) once.");
+    Serial.println("  - Ensure you selected the correct XIAO ESP32S3 board in Boards Manager.");
+    Serial.println("  - As a last resort, call WiFi.begin(...) once to fully init the stack.");
+  }
+
+  // 3) Also show the String API view (and its reversed) for completeness
+  String macStr = WiFi.macAddress();
+  Serial.print("WiFi.macAddress():             ");
+  Serial.println(macStr);
+
+  // Reverse the human-readable string "AA:BB:CC:DD:EE:FF"
+  // (Since we already have arrays, this is just for parity with your original sketch)
+  if (macStr.length() == 17) {
+    String parts[6]; int idx = 0;
+    for (int i = 0; i < 6; ++i) { parts[i] = macStr.substring(idx, idx + 2); idx += 3; }
+    String revStr;
+    for (int i = 5; i >= 0; --i) { revStr += parts[i]; if (i > 0) revStr += ":"; }
+    Serial.print("WiFi.macAddress() reversed:    ");
+    Serial.println(revStr);
+  }
+}
+
+void loop() {
+  delay(2000);
+}

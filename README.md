@@ -1,27 +1,3 @@
-
-
-## Webhook Configurations
-
-Particle HTTP Get URL:
-'https://ny3.blynk.cloud/external/api/batch/update'
-Particle Events URL:
-'https://ny3.blynk.cloud/external/api/logEvent'
-
-To generate particle token for Blynk webhook:
-https://docs.particle.io/reference/cloud-apis/access-tokens/
-
-Blynk webhook URL:
-'https://api.particle.io/v1/devices/YOURIDHERE/setRelay'
-
-Blynk JSON Content:
-arg={device_pinValue}
-
-Authorization   Bearer 712c91871cea1540cd0f1a81f80955aff4e7cb49
-Content-Type    application/x-www-form-urlencoded
-
-
-
-
 # ESP32 Camera and Particle Boron Remote Monitor Setup
 
 This repository contains setup details and useful links for 
@@ -41,7 +17,8 @@ Add the following Board Manager URL in Arduino IDE for ESP32 board support:
 `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`
 
 ### ESP32-CAM_MJEPG2SD
-[https://github.com/s60sc/ESP32-CAM_MJPEG2SD] (https://github.com/s60sc/ESP32-CAM_MJPEG2SD)
+
+[https://github.com/s60sc/ESP32-CAM_MJPEG2SD](https://github.com/s60sc/ESP32-CAM_MJPEG2SD)
 
 ---
 

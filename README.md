@@ -1,6 +1,8 @@
-# ESP32 Camera and Particle Boron Remote Monitor Setup
+# SE NATIA 2025 Conference Projects
 
-This repository contains setup details and useful links for 
+This repository contains setup details and useful links for our 2025 projects.  
+
+Please DO NOT try to work ahead of the class.  We will reference sections of this site when appropriate.  
 
 ---
 
@@ -47,7 +49,7 @@ Replace `YOURIDHERE` with your Particle device ID.
 - 1 arg={device_pinValue}
 
 ### HTTP Headers (optional)
-|                         |                              |
+|                         |                                    |
 |-------------------------|------------------------------------|
 | Authorization           | Bearer YOURPARTICLETOKENHERE       |
 | Content-Type            | application/x-www-form-urlencoded  |

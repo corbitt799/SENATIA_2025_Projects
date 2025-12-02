@@ -2,7 +2,7 @@
 
 This repository contains setup details and useful links for our 2025 projects.  
 
-Please DO NOT try to work ahead of the class.  We will reference sections of this site when appropriate.  
+Please DO NOT try to work ahead of class.  We will reference sections of this site when appropriate.  
 
 ---
 

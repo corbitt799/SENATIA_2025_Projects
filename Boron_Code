@@ -4,7 +4,7 @@
 #include <Wire.h>
 
 // Blynk and Webhook Constants
-const char* BLYNK_TOKEN = "CCaHOMIumtu3MT9NL0ZM699XjUWZJq2O";
+const char* BLYNK_TOKEN = "YOURTOKENHERE";
 const char* EVENT_NAME = "blynk_https_get";   // Telemetry webhook
 const char* ALERT_EVENT_NAME = "blynk_alert"; // Alert/notification webhook
 

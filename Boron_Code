@@ -1,7 +1,4 @@
 // This #include statement was automatically added by the Particle IDE.
-#include <Adafruit_BME280.h>
-
-// This #include statement was automatically added by the Particle IDE.
 #include <Particle.h>
 #include <Adafruit_BME280.h>
 #include <Wire.h>
